@@ -1,0 +1,4 @@
+import {defineConfig} from 'vite';
+import react from '@vitejs/plugin-react';
+import {rm} from 'node:fs/promises';
+export default defineConfig({plugins:[react(),{name:'device-assets-only',apply:'build',async closeBundle(){await rm('dist/character/videos',{recursive:true,force:true});await rm('dist/character/motion-v7',{recursive:true,force:true});await rm('dist/character/motion-v6',{recursive:true,force:true});await rm('dist/character/motion-v5',{recursive:true,force:true});await rm('dist/character/motion-v4',{recursive:true,force:true});await rm('dist/character/motion-v3',{recursive:true,force:true});await rm('dist/character/motion-v2',{recursive:true,force:true});await rm('dist/character/neutral.png',{force:true});}}],server:{fs:{deny:['.env','.env.*','**/.env*','**/.cache/**','**/server/**','**/scripts/**']}}});

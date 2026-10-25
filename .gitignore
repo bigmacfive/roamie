@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env*
+!.env.example
+.cache/
+output/
+.playwright-cli/
+.vercel/
+.DS_Store
+
+# Previous media exports; current runtime uses motion-v8.
+public/character/videos/
+public/character/neutral.png
+public/character/motion-v[2-7]/
